@@ -1,6 +1,6 @@
 import { db } from '../db';
 import { collection, doc, getDocs, writeBatch } from 'firebase/firestore/lite';
-import { Asset } from '@/types/Asset';
+import { WealthAsset } from '@/types/Asset';
 import assets from './assets.json';
 
 const assetsCollection = collection(db, 'assets');
@@ -56,5 +56,5 @@ export const dropAssets = async () => {
 export const getAssets = async () => {
   const assetsSnapshot = await getDocs(assetsCollection);
   const assets = assetsSnapshot.docs.map((doc) => doc.data());
-  return assets as Asset[];
+  return assets as WealthAsset[];
 };
