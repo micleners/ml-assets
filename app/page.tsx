@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IconPizza } from '@tabler/icons-react';
+import { IconBuildingBank } from '@tabler/icons-react';
 import { Button, Container, Flex, Paper, Text, Title } from '@mantine/core';
 
 export default function HomePage() {
@@ -7,15 +7,15 @@ export default function HomePage() {
     <Container size="sm" py="xl">
       <Paper shadow="md" p="xl" radius="md" withBorder>
         <Flex direction="column" align="center" gap="sm">
-          <IconPizza size={48} color="#e03131" />
+          <IconBuildingBank size={48} color="#12b886" />
           <Title order={1} ta="center" mb="sm">
-            Welcome to ML Pizza!
+            Welcome to Your Asset Manager!
           </Title>
           <Text ta="center" c="gray.9" mb="lg">
-            The best place to discover, customize, and enjoy delicious pizzas. Order now and let the pizza party begin!
+            Find information about your assets: cash, investments, property, and real estate. Organize and track your wealth in one place.
           </Text>
-          <Button component={Link} href="/Menu" size="md" color="red.8" radius="xl">
-            See Our Menu
+          <Button component={Link} href="/Assets" size="md" color="teal" radius="xl">
+            See Asset Overview
           </Button>
         </Flex>
       </Paper>

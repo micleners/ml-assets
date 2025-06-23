@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { IconHome, IconPizza } from '@tabler/icons-react';
+import { IconHome, IconBuildingBank } from '@tabler/icons-react';
 import { Button, Flex, Paper } from '@mantine/core';
 
 export function Navbar() {
@@ -16,7 +16,7 @@ export function Navbar() {
           href="/"
           variant={pathname === '/' ? 'filled' : 'light'}
           leftSection={<IconHome size={24} />}
-          color="red.8"
+          color="teal"
           radius="xl"
           size="md"
           fw={700}
@@ -27,13 +27,13 @@ export function Navbar() {
           component={Link}
           href="/Menu"
           variant={pathname === '/Menu' ? 'filled' : 'light'}
-          leftSection={<IconPizza size={24} />}
-          color="red.8"
+          leftSection={<IconBuildingBank size={24} />}
+          color="teal"
           radius="xl"
           size="md"
           fw={700}
         >
-          Menu
+          Assets
         </Button>
       </Flex>
     </Paper>
