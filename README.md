@@ -133,6 +133,32 @@ ml-assets/
 - `POST /api/assets/seed` - Seed the database with sample assets
 - `DELETE /api/assets/drop` - Clear all assets from the database
 
+## Design Decisions
+
+### Technology Choices
+- **Next.js**: Selected as the framework because:
+  - Learning opportunity aligned with potential future work
+  - Provides both frontend and API capabilities in one framework
+  - Built-in TypeScript support and great developer experience
+  - Server-side rendering capabilities for better performance
+
+- **Firebase Firestore**: Chosen as the database solution because:
+  - Previous experience made it quick to implement
+  - Perfect fit for JSON-like data structures
+  - Easy to set up and manage without complex infrastructure
+  - Real-time capabilities if needed for future enhancements
+
+## Trade-offs and Limitations
+
+Due to the time-constrained nature of this coding challenge, several trade-offs were made:
+
+1. **Data Validation**: Basic validation only; a production app would need more robust validation and error handling
+2. **Authentication**: Not implemented, though Firebase makes it easy to add later
+3. **Testing Coverage**: Limited test coverage focusing on core functionality
+4. **Asset Management**: Read-only implementation; full CRUD operations would be needed in a production environment
+5. **Error States**: Basic error handling implemented; would need more comprehensive error states and user feedback
+6. **Performance Optimization**: Basic implementation without pagination or lazy loading for large datasets
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENCE](LICENCE) file for details.
