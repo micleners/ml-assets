@@ -1,5 +1,7 @@
-"use client"
-import { Box, Group, Stack, Text } from '@mantine/core';
+'use client';
+
+import { IconChevronDown } from '@tabler/icons-react';
+import { Box, Card, Group, Stack, Text, UnstyledButton } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { WealthAsset } from '@/types/Asset';
 
@@ -19,19 +21,30 @@ export const AssetCategory = ({
   const [opened, { toggle }] = useDisclosure(true);
 
   return (
-    <Box mb="md">
-      <Group justify="space-between" style={{ cursor: 'pointer' }} onClick={toggle}>
-        <Text size="lg" fw={700}>
-          {category}
-        </Text>
-        <Text size="lg" fw={700}>
-          ${categoryTotal.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-        </Text>
-      </Group>
+    <Card withBorder shadow="sm" radius="md" mb="md" padding={0}>
+      <UnstyledButton onClick={toggle} w="100%" bg="gray.0" p="md">
+        <Group justify="space-between">
+          <Group gap="xs">
+            <IconChevronDown
+              size={20}
+              style={{
+                transform: opened ? 'rotate(0deg)' : 'rotate(-90deg)',
+                transition: 'transform 200ms ease',
+              }}
+            />
+            <Text size="lg" fw={700}>
+              {category}
+            </Text>
+          </Group>
+          <Text size="lg" fw={700}>
+            ${categoryTotal.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+          </Text>
+        </Group>
+      </UnstyledButton>
       {opened && (
-        <>
+        <Box p="md">
           {Object.entries(groupedAssets).map(([subcategory, assets]) => (
-            <Box key={subcategory} ml={24}>
+            <Box key={subcategory} ml={24} mb="md">
               <Group justify="space-between">
                 <Text size="lg" fw={500}>
                   {subcategory}
@@ -56,8 +69,8 @@ export const AssetCategory = ({
               </Stack>
             </Box>
           ))}
-        </>
+        </Box>
       )}
-    </Box>
+    </Card>
   );
-}; 
+};
