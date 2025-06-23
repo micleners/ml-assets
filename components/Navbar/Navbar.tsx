@@ -25,8 +25,8 @@ export function Navbar() {
         </Button>
         <Button
           component={Link}
-          href="/Menu"
-          variant={pathname === '/Menu' ? 'filled' : 'light'}
+          href="/Assets"
+          variant={pathname === '/Assets' ? 'filled' : 'light'}
           leftSection={<IconBuildingBank size={24} />}
           color="teal"
           radius="xl"

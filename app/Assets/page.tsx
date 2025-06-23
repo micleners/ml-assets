@@ -1,5 +1,7 @@
+import { WealthAssets } from '@/components/WealthAssets';
+
 const AssetsPage = () => {
-  return <div>Assets</div>;
+  return <WealthAssets />;
 };
 
 export default AssetsPage;

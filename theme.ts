@@ -4,5 +4,5 @@ import { createTheme } from '@mantine/core';
 
 export const theme = createTheme({
   primaryColor: 'teal',
-  /* Put your mantine theme override here */
+  fontFamily: '"Neue Haas Unica Pro", "Helvetica Neue", Helvetica, Arial, sans-serif',
 });
